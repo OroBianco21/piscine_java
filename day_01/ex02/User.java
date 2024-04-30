@@ -1,4 +1,4 @@
-package day01.ex01;
+package day01.ex02;
 
 public class User {
 	private String name;
