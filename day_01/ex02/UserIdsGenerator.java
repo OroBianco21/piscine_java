@@ -1,4 +1,4 @@
-package day01.ex02;
+// package day01.ex02;
 
 public class UserIdsGenerator {
 	

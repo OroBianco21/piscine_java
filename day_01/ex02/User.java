@@ -1,4 +1,4 @@
-package day01.ex02;
+// package day01.ex02;
 
 public class User {
 	private String name;
@@ -7,14 +7,14 @@ public class User {
 
 	public User(String name, int balance) {
 		this.name = name;
-		this.id = UserIdsGenerator.getInstance().generateId();;
+		this.id = UserIdsGenerator.getInstance().generateId();
 		if (balance >= 0) {
 			this.balance = balance;
 		} else {
 			this.balance = 0;
 		}
-	}	
-	
+	}
+
 	public void setBalance(Integer balance) {
         if (balance > 0) {
             this.balance = balance;
