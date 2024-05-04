@@ -1,6 +1,6 @@
 // package day_01.ex02;
 
-public class UsersArrayList {
+public class UsersArrayList implements UsersList {
 	private int size = 10;
 	private int tmp_size = 0;
 	private int count = 0;
@@ -22,13 +22,28 @@ public class UsersArrayList {
 			users[count++] = add_user;
 		}
 	}
-	int retrieve_user_by_ID() {
-
+	public User retrieve_user_by_ID(int id) throws UserNotFoundException {
+		for (int i = 0; i < count; i++) {
+            if (users[i].getId() == id) {
+                return users[i];
+            }
+        }
+        throw new UserNotFoundException("User with id " + id + " not found");
 	}
-	int retrieve_user_by_index() {
-
+	public User retrieve_user_by_index(int index) throws UserNotFoundException {
+		if (index < count && index >= 0) {
+            return users[index];
+        }
+        throw new UserNotFoundException("User with index " + index + " not found");
 	}
-	int retrieve_number_of_users() {
-		
+	public int retrieve_number_of_users() {
+		return (count);
+	}
+
+	public void printInfo(){
+        for (int i = 0; i < this.count; i++){
+            System.out.print(i + "\tName: " + users[i].getName() + "  balance: " + users[i].getBalance());
+            System.out.println("\tid: " + users[i].getId());
+        }
 	}
 }
